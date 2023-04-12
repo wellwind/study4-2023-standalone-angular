@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { TodoDoneDirective } from './todo-done.directive';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [NgFor, AsyncPipe, RouterLink],
+  imports: [NgFor, AsyncPipe, RouterLink, TodoDoneDirective],
   template: `
     <ul>
       <li *ngFor="let todo of todos$ | async">
-        <a [routerLink]="['/todos', todo.id]">{{ todo.title }}</a>
+        <a [routerLink]="['/todos', todo.id]" [appTodoDone]="todo">{{ todo.title }}</a>
       </li>
     </ul>
   `,
