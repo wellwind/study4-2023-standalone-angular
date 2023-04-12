@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
   styles: [
   ]
 })
-export class TodosComponent {
+export default class TodosComponent {
 
 }

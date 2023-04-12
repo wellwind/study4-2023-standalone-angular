@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
   styles: [
   ]
 })
-export class SingleTodoComponent {
+export default class SingleTodoComponent {
 
 }
