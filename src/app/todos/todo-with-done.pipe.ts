@@ -2,12 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'todoWithDone',
-  standalone: true
+  standalone: true,
 })
 export class TodoWithDonePipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(todoItem: any): unknown {
+    return `${todoItem.title}${todoItem.completed ? '(done)' : ''}`;
   }
-
 }
